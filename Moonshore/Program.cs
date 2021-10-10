@@ -91,6 +91,15 @@ namespace Moonshore
                 mapWidth,
                 mapHeight);
             mapBitmap.Save("c:\\temp\\map.bmp");
+
+            Console.WriteLine("Serialising to json map file...");
+            var mapSerialiser = new JsonMapSerialiser();
+            mapSerialiser.Save(
+                "c:\\temp\\map.json",
+                terrainMap,
+                new MapItemInfo[][] { treeLayer, caveLayer },
+                mapWidth,
+                mapHeight);
         }
     }
 }
